@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 240 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 10%;
+    --primary: 210 55% 24%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 207 50% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 45 75% 46%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 55% 24%;
+    --radius: 0.5rem;
+    
+    --color-primary: #1E3A5F;
+    --color-secondary: #2D5A87;
+    --color-accent: #C9A227;
+    --color-text: #1A1A2E;
+    --color-text-muted: #718096;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply w-full px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+  
+  .section-inner {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1E3A5F] to-[#2D5A87];
+  }
+  
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #1E3A5F 0%, #2D5A87 100%);
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-2;
+    box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
+  }
+}
